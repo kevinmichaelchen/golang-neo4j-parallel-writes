@@ -1,10 +1,14 @@
 ## Getting started
 
-Spin up Neo4j
+```bash
+mkdir -p $HOME/neo4j/data
 
-![carbon](https://user-images.githubusercontent.com/5129994/182906959-63794619-22c7-49c5-ae09-464d3e806493.png)
+docker run \
+  -d \
+  -p 7474:7474 \
+  -p 7687:7687 \
+  -v $HOME/neo4j/data:/data \
+  neo4j:latest
 
-Run
-```
 go run main.go
 ```

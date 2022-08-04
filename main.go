@@ -125,9 +125,8 @@ func createPeople(session neo4j.Session) []string {
 }
 
 func createRandomActions(session neo4j.Session, names []string) {
-	// Generate times
-	var times []time.Time
 	for _, name := range names {
+		var times []time.Time
 		numActions := minNumberActionsPerUser + rand.Intn(maxNumberActionsPerUser-minNumberActionsPerUser+1)
 		for i := 0; i < numActions; i++ {
 			t := time.Now().Add(-1 * time.Hour).
